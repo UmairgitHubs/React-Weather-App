@@ -5,11 +5,12 @@ This is a React-based weather dashboard that allows users to view and manage wea
 
 
 Features
-Search Cities: Users can search for cities using the search bar, which provides location suggestions powered by the X-RapidAPI GeoDB API.
-Real-Time Weather Data: Fetches live weather information, including temperature, humidity, wind speed, and weather conditions (clear, cloudy, misty, etc.), using the WeatherAPI.
-Add Multiple Cities: Users can add multiple cities to their weather dashboard to monitor different locations at the same time.
-Remove Cities: Cities can be easily removed from the list when they are no longer needed.
-Responsive Design: The app is fully responsive, with a collapsible sidebar for city management on mobile devices.
+-> Search Cities: Users can search for cities using the search bar, which provides location suggestions powered by the X-RapidAPI GeoDB API.
+-> Real-Time Weather Data: Fetches live weather information, including temperature, humidity, wind speed, and weather conditions (clear, cloudy, misty, etc.), using the WeatherAPI.
+-> Add Multiple Cities: Users can add multiple cities to their weather dashboard to monitor different locations at the same time.
+-> Remove Cities: Cities can be easily removed from the list when they are no longer needed.
+-> Responsive Design: The app is fully responsive, with a collapsible sidebar for city management on mobile devices.
+
 Tech Stack
 Frontend: React.js, SCSS
 APIs:
@@ -20,7 +21,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/weather-dashboard.git
+https://github.com/UmairgitHubs/React-Weather-App.git
 cd weather-dashboard
 Install dependencies:
 
