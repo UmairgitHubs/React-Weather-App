@@ -5,12 +5,12 @@ import ReactAnimatedWeather from "react-animated-weather";
 function Forecast({ weather }) {
   const { data } = weather;
   const [forecastData, setForecastData] = useState([]);
-  const [isCelsius, setIsCelsius] = useState(true); 
+  const [isCelsius, setIsCelsius] = useState(true);
 
   useEffect(() => {
     const fetchForecastData = async () => {
-      const apiKey = "6ce7f3549e664a7d820114014240909"; 
-      const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${data.location.name}&days=5`; 
+      const apiKey = "6ce7f3549e664a7d820114014240909";
+      const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${data.location.name}&days=5`;
 
       try {
         const response = await axios.get(url);
@@ -23,23 +23,19 @@ function Forecast({ weather }) {
     fetchForecastData();
   }, [data.location.name]);
 
-
   const formatDay = (dateString) => {
     const options = { weekday: "short" };
     const date = new Date(dateString * 1000);
     return date.toLocaleDateString("en-US", options);
   };
 
-
   const toggleTemperatureUnit = () => {
     setIsCelsius((prevState) => !prevState);
   };
 
-  
   const convertToFahrenheit = (temperature) => {
     return Math.round((temperature * 9) / 5 + 32);
   };
-
 
   const renderTemperature = (temperature) => {
     return isCelsius
@@ -69,7 +65,6 @@ function Forecast({ weather }) {
       </div>
       <p className="weather-des">{data.current.condition.text}</p>
 
-  
       <div className="forecast">
         <h3>5-Day Forecast:</h3>
         <div className="forecast-container">

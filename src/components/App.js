@@ -21,6 +21,8 @@ function App() {
     }, 2000);
   }, []);
 
+
+
   const search = async (event) => {
     event.preventDefault();
     if (query) {
@@ -50,13 +52,31 @@ function App() {
     }
   };
 
+
+  
+
+  useEffect(() => {
+    const savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
+    setCities(savedCities);
+    if (savedCities.length > 0) {
+      setSelectedCity(savedCities[0]);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("savedCities", JSON.stringify(cities));
+  }, [cities]);
+
+
+
   const removeCity = (cityName) => {
     const updatedCities = cities.filter(
       (city) => city.location.name !== cityName
     );
     setCities(updatedCities);
+    localStorage.setItem("savedCities", JSON.stringify(updatedCities));
     if (selectedCity?.location.name === cityName) {
-      setSelectedCity(null);
+      setSelectedCity(updatedCities.length > 0 ? updatedCities[0] : null);
     }
   };
 
